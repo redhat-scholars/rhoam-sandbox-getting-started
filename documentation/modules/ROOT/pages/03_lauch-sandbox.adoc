@@ -1,0 +1,14 @@
+
+== Launch the API Management Dashboard
+
+* In the OpenShift console, ensure you are using the project `<username>-dev` 
+* Select Project from the left side navigation pane.
+* * In the *Launcher pane* on the right side, select *API Management*
++
+<image>
+* Choose to authenticate using Red Hat Single Sign-On, and  login using the identity provider that applies to you, e.g DevSandbox.
++
+<IMAGE>
+* A welcome message is displayed if this is your first time logging into 3scale API Management. Dismiss, or read through the welcome message page(s).
+
+You are now at the Red Hat OpenShift API Management dashboard.

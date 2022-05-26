@@ -1,20 +1,24 @@
-= Welcome to Template Tutorial
+= Welcome to the Red Hat OpenShift API Management Workshop
+
 :page-layout: home
 :!sectids:
 
 [.text-center.strong]
-== Publish Services to Kubernetes
+== Introduction
 
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+Welcome to the Red Hat OpenShift API Management Workshop.
 
-[.tiles.browse]
-== Browse modules
+Red Hat® OpenShift® API Management is a hosted and managed API management service delivered as an add-on product to Red Hat OpenShift Dedicated, a fully managed service of enterprise Kubernetes platform Red Hat OpenShift and on and Red Hat OpenShift Service on AWS.
 
-[.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+As a developer, with OpenShift API Management, you can manage API access, policy, and traffic controls, and reuse existing assets by connecting to an API. You can enhance the security of the APIs and developer portal by leveraging Red Hat’s single sign-on technology.
 
-[.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+In this guided workshop you will 
+
+* Access your Red Hat OpenShift API Management portal.
+* Deploy a containerized application that exposes an HTTP API.
+* Annotate the application for integration with Red Hat OpenShift API Management.
+* Secure and manage your HTTP API using Red Hat OpenShift API Management.
+
+
+This workshop uses the the newly lauched *Developer Sandbox for Red Hat OpenShift API Management* , which provides you with a private OpenShift environment in a shared, multi-tenant OpenShift cluster in which you can setup a OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. This also means you won't have to install anything on your workstation in order to run this workshop.
+

@@ -1,29 +1,36 @@
-= Setup
+= Red Hat OpenShift API Management
 include::_attributes.adoc[]
 
-[#prerequisite]
-== Prerequisite CLI tools
 
-include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/prerequisites-kubernetes.adoc[]
-|===
 
-include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/optional-requisites.adoc[]
-|===
+As a developer, with OpenShift API Management, you can manage API access, policy, and traffic controls, and reuse existing assets by connecting to an API. You can enhance the security of the APIs and developer portal by leveraging Red Hat’s single sign-on technology.
 
-[#minikube]
-== Setup Kubernetes
+You will use the the newly lauched *Developer Sandbox for Red Hat OpenShift API Management*, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. 
 
-:profile: my_profile
+[#sandboxsignup]
+== Signup for Red Hat OpenShift API Management sandbox
 
-include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/kubernetes-setup.adoc[]
+Register for a RHOAM sandbox by clicking on the red button in the https://developers.redhat.com/developer-sandbox/activities/share-java--applications-openshift-api-management[Red Hat OpenShift API Management user activities page]
 
-And then you are ready for start using Kubernetes:
+You will be required to create a Red Hat account and pass our two-factor authentication process by providing your phone number.
+Do not worry! This step will not save your phone number, we are just protecting our hardware from crypto mining. 
 
-image::kubelogo.png[]
+You will also be asked to confirm the request through an email sent to your inbox. 
 
-[#downloadtutorial]
-== Get tutorial sources
+[#apitenant]
+== Create a API Management Tenant
 
-:tutorial-url: https://github.com/redhat-developer-demos/rhd-tutorial-common.git
-:folder: my_folder
-include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/download-sources.adoc[]
+Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
+
+* From the *Projects* dropdown on the top of the page, set the project namespace as *<username>-dev* from the projects that have been already created for you.
+* Click on *Search* from the left navigation
+* Click on *Resources* to search for `APIManagementTenant` and select it. 
+* Select *Create APIManagementTenant* button
+* You will be taken to the YAML configuration of this resource. Click the  Create button at the bottom of the YAML displayed.
+* You will be taken to the Details page of this resource. Click on the YAML tab to view the changes to the YAML configuration.
+* Watch for changes to the YAML of the APIManagementTenant resource, and wait for  the status to be displayed at the bottom of the YAML to become `status.provisioningStatus: 3scale account ready`
+* The API Management  Tenant account is now provisioned and is ready for use. 
+This may take a couple of minutes 
+* To access OpenShift API Management, navigate to the Launcher pane on the right side, select `API Management`
+* Choose to authenticate using Red Hat Single Sign-On, and  login using the identity provider that applies to you, e.g DevSandbox.
+

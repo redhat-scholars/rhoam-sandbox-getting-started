@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: rhoam-sandbox-tutorial
+title: Devnation Workshop
 version: master
 nav:
   - modules/ROOT/nav.adoc

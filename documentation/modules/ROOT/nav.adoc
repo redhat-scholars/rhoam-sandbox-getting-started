@@ -1,7 +1,16 @@
-* xref:01-setup.adoc[1. Setup]
-** xref:01-setup.adoc#prerequisite[Prerequisites]
-** xref:01-setup.adoc#minikube[Setup Minikube]
+* xref:01-setup.adoc[1. Setup Developer Sandbox for Red Hat OpenShift API Management]
+** xref:01-setup.adoc#sandboxsignup[Signup]
+** xref:01-setup.adoc#apitenant[Create a API Management Tenant]
 
-* xref:02-deploy.adoc[2. Deploy Service]
-** xref:02-deploy.adoc#package[Build Service]
-** xref:02-deploy.adoc#deploy[Deploy Dervice]
+
+* xref:02-deploy.adoc[2. Deploy a REST API and setup for discovery]
+** xref:02-deploy.adoc#deploy[Deploy a REST Service]
+** xref:02-deploy.adoc#configure[Configure Service]
+
+
+* xref:03_lauch-sandbox.adoc[3. Launch the API Management Dashboard]
+
+* xref:04-manage-api.adoc[4. Manage API]
+** xref:04-manage-api.adoc#_import_the_api_into_openshift_api_management[Import the API into OpenShift API Management]
+** xref:04-manage-api.adoc#_enable_api_key_security[Enable API Key Security]
+** xref:04-manage-api.adoc#_call_the_api_using_your_api_key[Call the API using API Key]
