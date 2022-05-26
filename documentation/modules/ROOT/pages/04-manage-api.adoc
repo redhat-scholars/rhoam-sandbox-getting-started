@@ -103,4 +103,7 @@ An application  is a subscription to the service (API Product) through the Appli
 * Select the Resources tab in the panel that appeared.
 * Click the rhoam-quarkus-openapi item under the Routes heading.
 * Expand the Actions dropdown and click Delete Route.
-* Congratulations! The only endpoint available to access your API now enforces API Key security.
+
+
+
+Congratulations! The only endpoint available to access your API now enforces API Key security.
