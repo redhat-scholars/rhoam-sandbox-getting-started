@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Red Hat OpenShift API Management :: Red Hat OpenShift API Management Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/course-template/rhoam-sandbox-tutorial/main/01-setup.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="02-deploy.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../../_/img/NewRHDFullLogo_4-color_white-wordmark.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/course-template">Red Hat OpenShift API Management Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoam-sandbox-tutorial" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Setup Developer Sandbox for Red Hat OpenShift API Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#sandboxsignup">Signup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#apitenant">Create a API Management Tenant</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-deploy.html">2. Deploy a REST API and setup for discovery</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-deploy.html#deploy">Deploy a REST Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-deploy.html#configure">Configure Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="03_lauch-sandbox.html">3. Launch the API Management Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-manage-api.html">4. Manage API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_import_the_api_into_openshift_api_management">Import the API into OpenShift API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_enable_api_key_security">Enable API Key Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_call_the_api_using_your_api_key">Call the API using API Key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Devnation Workshop</a></li>
+    <li><a href="01-setup.html">1. Setup Developer Sandbox for Red Hat OpenShift API Management</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/rhoam-sandbox-getting-started/edit/main/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Red Hat OpenShift API Management</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a developer, with OpenShift API Management, you can manage API access, policy, and traffic controls, and reuse existing assets by connecting to an API. You can enhance the security of the APIs and developer portal by leveraging Red Hat’s single sign-on technology.</p>
+</div>
+<div class="paragraph">
+<p>You will use the the newly lauched <strong>Developer Sandbox for Red Hat OpenShift API Management</strong>, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sandboxsignup"><a class="anchor" href="#sandboxsignup"></a>Signup for Red Hat OpenShift API Management sandbox</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Register for a RHOAM sandbox by clicking on the red button in the <a href="https://developers.redhat.com/developer-sandbox/activities/share-java&#8212;&#8203;applications-openshift-api-management">Red Hat OpenShift API Management user activities page</a></p>
+</div>
+<div class="paragraph">
+<p>You will be required to create a Red Hat account and pass our two-factor authentication process by providing your phone number.
+Do not worry! This step will not save your phone number, we are just protecting our hardware from crypto mining.</p>
+</div>
+<div class="paragraph">
+<p>You will also be asked to confirm the request through an email sent to your inbox.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apitenant"><a class="anchor" href="#apitenant"></a>Create a API Management Tenant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the <strong>Projects</strong> dropdown on the top of the page, set the project namespace as <strong>&lt;username&gt;-dev</strong> from the projects that have been already created for you.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> from the left navigation</p>
+</li>
+<li>
+<p>Click on <strong>Resources</strong> to search for <code>APIManagementTenant</code> and select it.</p>
+</li>
+<li>
+<p>Select <strong>Create APIManagementTenant</strong> button</p>
+</li>
+<li>
+<p>You will be taken to the YAML configuration of this resource. Click the  Create button at the bottom of the YAML displayed.</p>
+</li>
+<li>
+<p>You will be taken to the Details page of this resource. Click on the YAML tab to view the changes to the YAML configuration.</p>
+</li>
+<li>
+<p>Watch for changes to the YAML of the APIManagementTenant resource, and wait for  the status to be displayed at the bottom of the YAML to become <code>status.provisioningStatus: 3scale account ready</code></p>
+</li>
+<li>
+<p>The API Management  Tenant account is now provisioned and is ready for use.
+This may take a couple of minutes</p>
+</li>
+<li>
+<p>To access OpenShift API Management, navigate to the Launcher pane on the right side, select <code>API Management</code></p>
+</li>
+<li>
+<p>Choose to authenticate using Red Hat Single Sign-On, and  login using the identity provider that applies to you, e.g DevSandbox.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Devnation Workshop</a></span>
+  <span class="next"><a href="02-deploy.html">2. Deploy a REST API and setup for discovery</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../../_/js/vendor/clipboard.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

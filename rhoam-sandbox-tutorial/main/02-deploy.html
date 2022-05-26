@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deploy Service :: Red Hat OpenShift API Management Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/course-template/rhoam-sandbox-tutorial/main/02-deploy.html">
+    <link rel="prev" href="01-setup.html">
+    <link rel="next" href="03_lauch-sandbox.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../../_/img/NewRHDFullLogo_4-color_white-wordmark.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/course-template">Red Hat OpenShift API Management Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoam-sandbox-tutorial" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Setup Developer Sandbox for Red Hat OpenShift API Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#sandboxsignup">Signup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#apitenant">Create a API Management Tenant</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-deploy.html">2. Deploy a REST API and setup for discovery</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#deploy">Deploy a REST Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configure">Configure Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="03_lauch-sandbox.html">3. Launch the API Management Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-manage-api.html">4. Manage API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_import_the_api_into_openshift_api_management">Import the API into OpenShift API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_enable_api_key_security">Enable API Key Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_call_the_api_using_your_api_key">Call the API using API Key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Devnation Workshop</a></li>
+    <li><a href="02-deploy.html">2. Deploy a REST API and setup for discovery</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/rhoam-sandbox-getting-started/edit/main/documentation/modules/ROOT/pages/02-deploy.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Deploy Service</h1>
+<div class="sect1">
+<h2 id="_deploy_a_rest_api_and_setup_for_discovery"><a class="anchor" href="#_deploy_a_rest_api_and_setup_for_discovery"></a>Deploy a REST API and setup for discovery</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, you will deploy an existing  Quarkus application container image and configure it to make it easily discoverable by OpenShift API Management.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy"><a class="anchor" href="#deploy"></a>Deploy a REST API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now, let’s deploy an existing Quarkus application. The container image of this file is hosted on <a href="http://quay.io">quay.io</a>. Quay is a registry for storing and building container images as well as distributing other OCI artifacts. The service is free for those who want to set up their own public repositories and available for a fee if you want to create private repositories</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on the perspective switcher at the top of the navigation of the OpenShift console, and select Developer if you aren’t already in that perspective.</p>
+</li>
+<li>
+<p>You have two project automatically created.</p>
+</li>
+<li>
+<p>From the Project dropdown menu, ensure you are using <code>&lt;username&gt;-dev</code> project</p>
+</li>
+<li>
+<p>In the navigation menu, click <code><strong>+Add</strong></code>.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="project-add.png" alt="project add" width="75%">
+</div>
+</div>
+</li>
+<li>
+<p>On the +Add page, click the Container Image tile.</p>
+</li>
+<li>
+<p>In the Image name from external registry field, enter: quay.io/evanshortiss/rhoam-quarkus-openapi:latest</p>
+</li>
+<li>
+<p>Change the Runtime icon to Quarkus.</p>
+</li>
+<li>
+<p>Check the Create a Route to the Application box under Advanced options.</p>
+</li>
+<li>
+<p>At the end of the form, click Create.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="project-add.png" alt="project add" width="75%">
+</div>
+</div>
+</li>
+<li>
+<p>This will deploy the application and show the Topology view. The application is represented by the light grey area with a white border. The deployment is a white circle.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="project-add.png" alt="project add" width="75%">
+</div>
+</div>
+</li>
+<li>
+<p>Click the Open URL arrow icon on the deployment.</p>
+</li>
+<li>
+<p>This opens a new browser window that displays the Quarkus application homepage.</p>
+</li>
+<li>
+<p>Append /q/openapi?format=json to the URL in the address bar to confirm you can access the OpenAPI Spec for the application. Ensure the url is http and not https.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>With this, you have successfully deployed this application on OpenShift.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure"><a class="anchor" href="#configure"></a>Annotate the Quarkus application for Service Discovery</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we will</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add metadata to the previously deployed Quarkus application to make it easily discoverable by OpenShift API Management.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Service Discovery is a 3scale feature that helps you import services from an OpenShift cluster. The Red Hat 3scale API Management instance provided by Red Hat OpenShift API Management has the <a href="https://access.redhat.com/documentation/en-us/red_hat_3scale_api_management/2.10/html/admin_portal_guide/service_discovery_from_openshift_to_3scale">Service Discovery</a> feature enabled and pre-configured.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the Topology View.</p>
+</li>
+<li>
+<p>Click the Quarkus Deployment that you created in the previous section. A panel will appear on the right.</p>
+</li>
+<li>
+<p>Select the Resources tab in the panel.</p>
+</li>
+<li>
+<p>Click <strong>rhoam-quarkus-openapi</strong> link under the Services heading to load the Service details screen.</p>
+</li>
+<li>
+<p>Use the Edit link beside the Labels heading to add a label with the key <code><strong>discovery.3scale.net</strong></code> and value <code><strong>true</strong></code>.</p>
+</li>
+<li>
+<p>Scroll down and click the Annotations to open the Edit annotations dialog for the Service.</p>
+</li>
+<li>
+<p>Use the <strong>Add more</strong> button to add the following key-value pairs:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Key discovery.3scale.net/description-path, value /q/openapi?format=json.
+Key discovery.3scale.net/port, value 8080.
+Key discovery.3scale.net/scheme, value http.</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Click the Save button after you&#8217;ve added the three annotations.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_manage_the_rest_api_with_red_hat_openshift_api_management"><a class="anchor" href="#_manage_the_rest_api_with_red_hat_openshift_api_management"></a>Manage the REST API with Red Hat OpenShift API Management</h3>
+
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="01-setup.html">1. Setup Developer Sandbox for Red Hat OpenShift API Management</a></span>
+  <span class="next"><a href="03_lauch-sandbox.html">3. Launch the API Management Dashboard</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../../_/js/vendor/clipboard.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
