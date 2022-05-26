@@ -1,6 +1,6 @@
 name: rhoam-sandbox-tutorial
 title: Devnation Workshop
-version: master
+version: main
 nav:
   - modules/ROOT/nav.adoc
 
