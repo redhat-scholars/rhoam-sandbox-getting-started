@@ -17,18 +17,25 @@ Now, let’s deploy an existing Quarkus application. The container image of this
 +
 image::project-add.png[width=75%]
 . On the +Add page, click the Container Image tile.
-. In the Image name from external registry field, enter: quay.io/evanshortiss/rhoam-quarkus-openapi:latest
-. Change the Runtime icon to Quarkus.
+. In the Image name from external registry field, enter: `quay.io/evanshortiss/rhoam-quarkus-openapi:latest`
+. Change the Runtime icon to *Quarkus*.
 . Check the Create a Route to the Application box under Advanced options.
 . At the end of the form, click Create. 
 +
-image::project-add.png[width=75%]
+image::create-quarkus-app.png[width=100%]
++
+image::add-quarkus-app2.png[width=100%]
 .  This will deploy the application and show the Topology view. The application is represented by the light grey area with a white border. The deployment is a white circle.
 +
-image::project-add.png[width=75%]
+image::app-deployed.png[width=100%]
 . Click the Open URL arrow icon on the deployment.
 . This opens a new browser window that displays the Quarkus application homepage.
++
+image::quarkus-welcome.png[width=100%]
+
 . Append /q/openapi?format=json to the URL in the address bar to confirm you can access the OpenAPI Spec for the application. Ensure the url is http and not https.
++
+image::quarkus-api-call.png[width=100%]
 
 With this, you have successfully deployed this application on OpenShift.
 
@@ -48,11 +55,15 @@ Service Discovery is a 3scale feature that helps you import services from an Ope
 
 . Select the Resources tab in the panel.
 . Click *rhoam-quarkus-openapi* link under the Services heading to load the Service details screen.
-
-. Use the Edit link beside the Labels heading to add a label with the key `*discovery.3scale.net*` and value `*true*`.
-
-. Scroll down and click the Annotations to open the Edit annotations dialog for the Service.
++
+image::edit-label.png[width=100%]
+. Use the *Edit* link beside the Labels heading to add a label with the key and value `*discovery.3scale.net=true*`.
++
+image::discovery-label.png[width=100%]
+. Scroll down and click the *Annotations* to open the Edit annotations dialog for the Service.
 . Use the *Add more* button to add the following key-value pairs:
++
+image::annotations-dialog.png[]
 +
 ```
 Key discovery.3scale.net/description-path, value /q/openapi?format=json.
@@ -60,6 +71,6 @@ Key discovery.3scale.net/port, value 8080.
 Key discovery.3scale.net/scheme, value http.
 ```
 
-. Click the Save button after you've added the three annotations.
+. Click the *Save* button after you've added the three annotations.
 
 === Manage the REST API with Red Hat OpenShift API Management
