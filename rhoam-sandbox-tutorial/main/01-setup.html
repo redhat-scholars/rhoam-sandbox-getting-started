@@ -130,14 +130,19 @@
 <h2 id="sandboxsignup"><a class="anchor" href="#sandboxsignup"></a>Signup for Red Hat OpenShift API Management sandbox</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Register for a RHOAM sandbox by clicking on the red button in the <a href="https://developers.redhat.com/developer-sandbox/activities/share-java&#8212;&#8203;applications-openshift-api-management">Red Hat OpenShift API Management user activities page</a></p>
+<p>Register for a Developer Sandbox Red Hat OpenShift API Management for  by clicking on the red button in the <a href="https://developers.redhat.com/developer-sandbox/activities/share-java&#8212;&#8203;applications-openshift-api-management">Red Hat OpenShift API Management user activities page</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhoam-sandbox-landing.png" alt="rhoam sandbox landing" width="100%">
+</div>
 </div>
 <div class="paragraph">
 <p>You will be required to create a Red Hat account and pass our two-factor authentication process by providing your phone number.
 Do not worry! This step will not save your phone number, we are just protecting our hardware from crypto mining.</p>
 </div>
 <div class="paragraph">
-<p>You will also be asked to confirm the request through an email sent to your inbox.</p>
+<p>You will also be asked to confirm the request through an email sent to your inbox. After this, you will be able to login to the sandbox.</p>
 </div>
 </div>
 </div>
@@ -152,14 +157,33 @@ Do not worry! This step will not save your phone number, we are just protecting 
 <li>
 <p>From the <strong>Projects</strong> dropdown on the top of the page, set the project namespace as <strong>&lt;username&gt;-dev</strong> from the projects that have been already created for you.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="1 The OpenShift console.png" alt="1 The OpenShift console" width="100%">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Click on <strong>Search</strong> from the left navigation</p>
 </li>
 <li>
 <p>Click on <strong>Resources</strong> to search for <code>APIManagementTenant</code> and select it.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tenant-search.png" alt="tenant search" width="100%">
+</div>
+</div>
 </li>
 <li>
 <p>Select <strong>Create APIManagementTenant</strong> button</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/create-APIManagementTenant.png" alt="create APIManagementTenant" width="100%">
+</div>
+</div>
 </li>
 <li>
 <p>You will be taken to the YAML configuration of this resource. Click the  Create button at the bottom of the YAML displayed.</p>
@@ -169,16 +193,14 @@ Do not worry! This step will not save your phone number, we are just protecting 
 </li>
 <li>
 <p>Watch for changes to the YAML of the APIManagementTenant resource, and wait for  the status to be displayed at the bottom of the YAML to become <code>status.provisioningStatus: 3scale account ready</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/api-tenant-deployed.png" alt="api tenant deployed" width="100%">
+</div>
+</div>
 </li>
 <li>
-<p>The API Management  Tenant account is now provisioned and is ready for use.
-This may take a couple of minutes</p>
-</li>
-<li>
-<p>To access OpenShift API Management, navigate to the Launcher pane on the right side, select <code>API Management</code></p>
-</li>
-<li>
-<p>Choose to authenticate using Red Hat Single Sign-On, and  login using the identity provider that applies to you, e.g DevSandbox.</p>
+<p>The API Management  Tenant account is now provisioned and is ready for use. This may take a couple of minutes. If you prefer, you can skip to the next sections while the tenant is being setup in the background</p>
 </li>
 </ul>
 </div>

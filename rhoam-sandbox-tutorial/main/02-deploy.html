@@ -143,9 +143,9 @@
 </li>
 <li>
 <p>In the navigation menu, click <code><strong>+Add</strong></code>.</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="project-add.png" alt="project add" width="75%">
+<img src="_images/project-add.png" alt="project add" width="75%">
 </div>
 </div>
 </li>
@@ -153,27 +153,32 @@
 <p>On the +Add page, click the Container Image tile.</p>
 </li>
 <li>
-<p>In the Image name from external registry field, enter: quay.io/evanshortiss/rhoam-quarkus-openapi:latest</p>
+<p>In the Image name from external registry field, enter: <code>quay.io/evanshortiss/rhoam-quarkus-openapi:latest</code></p>
 </li>
 <li>
-<p>Change the Runtime icon to Quarkus.</p>
+<p>Change the Runtime icon to <strong>Quarkus</strong>.</p>
 </li>
 <li>
 <p>Check the Create a Route to the Application box under Advanced options.</p>
 </li>
 <li>
 <p>At the end of the form, click Create.</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="project-add.png" alt="project add" width="75%">
+<img src="_images/create-quarkus-app.png" alt="create quarkus app" width="100%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/add-quarkus-app2.png" alt="add quarkus app2" width="100%">
 </div>
 </div>
 </li>
 <li>
 <p>This will deploy the application and show the Topology view. The application is represented by the light grey area with a white border. The deployment is a white circle.</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="project-add.png" alt="project add" width="75%">
+<img src="_images/app-deployed.png" alt="app deployed" width="100%">
 </div>
 </div>
 </li>
@@ -182,9 +187,19 @@
 </li>
 <li>
 <p>This opens a new browser window that displays the Quarkus application homepage.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/quarkus-welcome.png" alt="quarkus welcome" width="100%">
+</div>
+</div>
 </li>
 <li>
 <p>Append /q/openapi?format=json to the URL in the address bar to confirm you can access the OpenAPI Spec for the application. Ensure the url is http and not https.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/quarkus-api-call.png" alt="quarkus api call" width="100%">
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -233,15 +248,30 @@
 </li>
 <li>
 <p>Click <strong>rhoam-quarkus-openapi</strong> link under the Services heading to load the Service details screen.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/edit-label.png" alt="edit label" width="100%">
+</div>
+</div>
 </li>
 <li>
-<p>Use the Edit link beside the Labels heading to add a label with the key <code><strong>discovery.3scale.net</strong></code> and value <code><strong>true</strong></code>.</p>
+<p>Use the <strong>Edit</strong> link beside the Labels heading to add a label with the key and value <code><strong>discovery.3scale.net=true</strong></code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/discovery-label.png" alt="discovery label" width="100%">
+</div>
+</div>
 </li>
 <li>
-<p>Scroll down and click the Annotations to open the Edit annotations dialog for the Service.</p>
+<p>Scroll down and click the <strong>Annotations</strong> to open the Edit annotations dialog for the Service.</p>
 </li>
 <li>
 <p>Use the <strong>Add more</strong> button to add the following key-value pairs:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/annotations-dialog.png" alt="annotations dialog">
+</div>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">Key discovery.3scale.net/description-path, value /q/openapi?format=json.
@@ -251,7 +281,7 @@ Key discovery.3scale.net/scheme, value http.</code></pre>
 </div>
 </li>
 <li>
-<p>Click the Save button after you&#8217;ve added the three annotations.</p>
+<p>Click the <strong>Save</strong> button after you&#8217;ve added the three annotations.</p>
 </li>
 </ol>
 </div>

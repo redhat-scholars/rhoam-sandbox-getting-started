@@ -118,7 +118,7 @@
 <h2 id="_manage_the_api_with_openshift_api_management"><a class="anchor" href="#_manage_the_api_with_openshift_api_management"></a>Manage the API with OpenShift API Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now let’s go ahead and configure the API.</p>
+<p>In this section you will  configure and secure the API that you have already deployed on OpenShift in the previous sections.</p>
 </div>
 </div>
 </div>
@@ -133,7 +133,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>An API in OpenShift API Management  is referred to as a <strong>Product</strong>. Products can have one or many Backends.</p>
+<p>An API in OpenShift API Management is referred to as a <strong>Product</strong>. Each <strong>Product</strong> can have one or many Backends.</p>
 </div>
 <div class="paragraph">
 <p>A <strong>Backend</strong> is a web service that OpenShift API Management will proxy requests to based on mapping rules defined in the Product.</p>
@@ -145,16 +145,34 @@
 <div class="paragraph">
 <p>Because you already configured the Quarkus API for Service Discovery in an earlier section, you can import it automatically as follows:</p>
 </div>
+<div class="paragraph">
+<p>Follow these steps to import Quarkus API:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
 <p>Click the <strong>Create Product</strong> button under the APIs heading on the dashboard. This will load the New Product screen.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhoam-dashboard.png" alt="rhoam dashboard">
+</div>
+</div>
 </li>
 <li>
 <p>Select the <strong>Import from OpenShift</strong> option. If this option is greyed out, click the <strong>Authenticate to enable this option</strong> link to enable it.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/newprod-import-from-openshift-greyed.png" alt="newprod import from openshift greyed">
+</div>
+</div>
 </li>
 <li>
 <p>After selecting the <strong>Import from OpenShift</strong> option you will be able to use the dropdown fields to select:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/newprod-import-from-openshift.png" alt="newprod import from openshift">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -162,6 +180,20 @@
 </li>
 <li>
 <p>The <strong>rhoam-quarkus-api</strong> application.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If there is only one discoverable API, these fields are auto-populated</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
@@ -171,6 +203,11 @@
 </li>
 <li>
 <p>You will be redirected back to the OpenShift API Management dashboard where your new API Product is listed. If your Quarkus API isn’t listed in the APIs section after a few moments, try refreshing the page.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/new-prod-added.png" alt="new prod added">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -186,12 +223,22 @@
 <ul>
 <li>
 <p>Select the <strong>rhoam-quarkus-openapi</strong> API from the <strong>Products</strong> list to visit the <strong>Overview</strong> screen.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/activedocs.png" alt="activedocs">
+</div>
+</div>
 </li>
 <li>
 <p>Click the <strong>ActiveDocs</strong> link on the left and verify that the rhoam-quarkus-openapi Swagger 3.0 spec was imported. The Swagger docs are generated from the  <code>/q/openapi?format=json</code> endpoint in the Quarkus app</p>
 </li>
 <li>
 <p>Expand the dropdown menu in the top navigation and select <strong>Backends</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend.png" alt="backend">
+</div>
+</div>
 </li>
 <li>
 <p>Verify that your <strong>rhoam-quarkus-openapi</strong> Backend is listed. You should also see that it&#8217;s using a private Service URL, e.g <code><a href="http://rhoam-quarkus-openapi.user-dev.svc.cluster.local:8080" class="bare">http://rhoam-quarkus-openapi.user-dev.svc.cluster.local:8080</a></code>.</p>
@@ -228,10 +275,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the API Management dashboard, select your rhoam-quarkus-openapi from the Products list.</p>
+<p>In the API Management dashboard, select your <strong>rhoam-quarkus-openapi</strong> from the Products list.</p>
 </li>
 <li>
-<p>Navigate to Integration &gt; Configuration using the side-menu. Your API is already available via the Staging APIcast, but the user_key * parameter in the Example curl for testing is set to a placeholder.</p>
+<p>Navigate to Integration &gt; Configuration using the side-menu. Your API is already available via the Staging APIcast, but the <strong>user_key</strong>  parameter in the <strong>Example curl</strong> for testing is set to a placeholder.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/missing-user-key.png" alt="missing user key">
+</div>
+</div>
 </li>
 <li>
 <p>Copy the URL, e.g <a href="https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=USER_KEY" class="bare">https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=USER_KEY</a>, and visit it in a browser or call it using your preferred HTTP client.</p>
@@ -255,7 +307,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In OpenShift API Management, application plans define usage rules and limits for your API. When a developer signs up to use your API, they can select an application plan from the ones you’ve defined. For example, you might create two application plans with different limits and pricing structures for an API, e.g., one free and the other paid.</p>
+<p>In OpenShift API Management, <strong>Application Plans</strong> define usage rules and limits for your API. When a developer signs up to use your API, they can select an application plan from the ones you’ve defined. For example, you might create two application plans with different limits and pricing structures for an API, e.g., one free and the other paid.</p>
 </div>
 </td>
 </tr>
@@ -264,10 +316,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Select your rhoam-quarkus-openapi from the Products list.</p>
+<p>Select your <strong>rhoam-quarkus-openapi</strong> from the Products list.</p>
 </li>
 <li>
-<p>Navigate to Applications &gt; Application plans using the side-menu.</p>
+<p>Navigate to <strong>Applications &gt; Application Plans</strong> using the side-menu.</p>
 </li>
 <li>
 <p>Click the <strong>Create Application Plan</strong> button.</p>
@@ -282,17 +334,27 @@
 <li>
 <p><code>rhoam-openapi-plan</code> for the System name.</p>
 </li>
-</ul>
-</div>
-</li>
 <li>
 <p>Uncheck the Applications require approval box.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/create-app-plan.png" alt="create app plan">
+</div>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Click <strong>Create Application Plan</strong>. You will be redirected to the Application Plans listing.</p>
 </li>
 <li>
 <p>Use the <strong>Publish</strong> link shown within the kebab menu of the newly created application plan to publish it. You will notice that the state of this plan is shown as <code>published</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/publish-app-plan.png" alt="publish app plan">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -307,43 +369,67 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>An application  is a subscription to the service (API Product) through the Application Plan created in the previous step. An application is linked to developer accounts for each application plan they sign up for. The application is normally associated with a unique set of credentials for the API, a traffic history of the calls sent to the API, and metadata captured at application creation.</p>
+<p>An <strong>Application</strong>  is a subscription to the service (API Product) through the <strong>Application Plan</strong> created in the previous step. An <strong>Application</strong> is linked to developer accounts for each application plan they sign up for. The <strong>Application</strong> is normally associated with a unique set of credentials for the API, a traffic history of the calls sent to the API, and metadata captured at application creation.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Next, you can create an <strong>Application</strong> registered to a developer account:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Next, you can create an Application registered to a developer account:</p>
+<p>Expand the dropdown menu in the top navigation of OpenShift API Management and select <strong>Audience</strong>.</p>
 </li>
 <li>
-<p>Expand the dropdown menu in the top navigation of 3scale API Management and select Audience.</p>
+<p>Choose the default <strong>Developer</strong> account from the Account listing.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/account-list.png" alt="account list">
+</div>
+</div>
 </li>
 <li>
-<p>Choose the Developer account from the Account listing.</p>
+<p>From the Developer account page select the <strong>Applications</strong> link at the top.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/applications-list-for-developer.png" alt="applications list for developer">
+</div>
+</div>
 </li>
 <li>
-<p>From the Developer account page select the Applications link at the top.</p>
-</li>
-<li>
-<p>Click the Create Application link.</p>
+<p>Click the <strong>Create Application</strong> link.</p>
 </li>
 <li>
 <p>Use the following details to create the application:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/create-new-application.png" alt="create new application">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select <strong>rhoam-quarkus-openapi</strong> for the Product, and select <strong>RHOAM Open API Plan</strong> for the Application Plan.</p>
 </li>
 <li>
-<p>Select rhoam-quarkus-openapi for the Product, and select RHOAM Open API Plan for the Application Plan.</p>
+<p>Enter <strong>Developer RHOAM Application</strong> in the Name and Description fields.</p>
 </li>
 <li>
-<p>Enter Developer RHOAM Application in the Name and Description fields.</p>
+<p>Click the <strong>Create Application</strong> button.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Click the Create Application button.</p>
-</li>
-<li>
-<p>You&#8217;ll be redirected to the Developer RHOAM Application page, and should see a User Key listed under the API Credentials section.</p>
+<p>You&#8217;ll be redirected to the <strong>Developer RHOAM Application</strong> page, and should see a User Key listed under the API Credentials section.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/api-key-in-application.png" alt="api key in application">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -359,16 +445,33 @@
 <p>Now that you have a valid API Key you&#8217;re ready to make authenticated requests against your API.</p>
 </li>
 <li>
-<p>Select your rhoam-quarkus-openapi from the Products list on the 3scale API Management dashboard.</p>
+<p>Select your <strong>rhoam-quarkus-openapi</strong> from the Products list on the OpenShift API Management dashboard.</p>
 </li>
 <li>
-<p>Navigate to Integration &gt; Configuration using the side-menu.</p>
+<p>Navigate to <strong>Integration</strong> &gt; <strong>Configuration</strong> using the side-menu.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/staging-url.png" alt="staging url">
+</div>
+</div>
 </li>
 <li>
-<p>Copy the Staging URL, e.g <a href="https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=&lt;API_KEY_GOES_HERE&gt" class="bare">https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=&lt;API_KEY_GOES_HERE&gt</a>;, and visit it in browser or using your preferred HTTP client. Make sure to replace the API Key value!</p>
+<p>Copy the <strong>Staging URL</strong>, e.g <a href="https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=" class="bare">https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/?user_key=</a><em>API_KEY_GOES_HERE</em>, and visit it in browser or using your preferred HTTP client. Make sure to the URL has the API Key value!</p>
 </li>
 <li>
 <p>Append /fruits to the path, but before the ?user_key portion of the URL. A list of fruits should be returned in JSON format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g <a href="https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/fruits?user_key=" class="bare">https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/fruits?user_key=</a><em>API_KEY_GOES_HERE</em></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/json-response.png" alt="json response">
+</div>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -377,19 +480,27 @@
 <div class="ulist">
 <ul>
 <li>
-<p>You visited a URL exposed directly by a Route in your OpenShift project in the first section of this guide.This endpoint was useful for testing, but is unprotected. You can now remove this public Route:</p>
+<p>You visited a URL exposed directly by a Route in your OpenShift project in the first section of this guide.This endpoint was useful for testing, but is unprotected. You can now remove this public Route.</p>
 </li>
 <li>
-<p>In the OpenShift console, click the rhoam-quarkus-openapi deployment in the Topology View.</p>
+<p>In the OpenShift console, click the <strong>rhoam-quarkus-openapi</strong> deployment in the Topology View.</p>
 </li>
 <li>
 <p>Select the Resources tab in the panel that appeared.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/view-route.png" alt="view route">
+</div>
+</div>
 </li>
 <li>
-<p>Click the rhoam-quarkus-openapi item under the Routes heading.</p>
+<p>Click the <strong>rhoam-quarkus-openapi</strong> item under the Routes heading.</p>
 </li>
 <li>
 <p>Expand the Actions dropdown and click Delete Route.</p>
+<div class="paragraph">
+<p><span class="image"><img src="_images/delete-route.png" alt="delete route"></span></p>
+</div>
 </li>
 </ul>
 </div>
