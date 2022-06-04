@@ -25,7 +25,7 @@ Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
 
 * From the *Projects* dropdown on the top of the page, set the project namespace as *<username>-dev* from the projects that have been already created for you.
 
-image::1 The OpenShift console.png[width=100%]
+image::openShift-console.png[width=100%]
 
 * Click on *Search* from the left navigation
 * Click on *Resources* to search for `APIManagementTenant` and select it. 
@@ -40,6 +40,3 @@ image::create-APIManagementTenant.png[width=100%]
 +
 image::api-tenant-deployed.png[width=100%]
 * The API Management  Tenant account is now provisioned and is ready for use. This may take a couple of minutes. If you prefer, you can skip to the next sections while the tenant is being setup in the background 
-
-
-
