@@ -11,7 +11,7 @@ In this section, you will deploy an existing  Quarkus application container imag
 Now, let’s deploy an existing Quarkus application. The container image of this file is hosted on http://quay.io[quay.io]. Quay is a registry for storing and building container images as well as distributing other OCI artifacts. The service is free for those who want to set up their own public repositories and available for a fee if you want to create private repositories
 
 . Click on the perspective switcher at the top of the navigation of the OpenShift console, and select Developer if you aren’t already in that perspective.
-. You have two project automatically created.
+. You have two projects automatically created.
 . From the Project dropdown menu, ensure you are using `<username>-dev` project
 . In the navigation menu, click `*+Add*`.
 +
@@ -33,7 +33,7 @@ image::app-deployed.png[width=100%]
 +
 image::quarkus-welcome.png[width=100%]
 
-. Append /q/openapi?format=json to the URL in the address bar to confirm you can access the OpenAPI Spec for the application. Ensure the url is http and not https.
+. Append /q/openapi?format=json to the URL in the address bar to confirm you can access the OpenAPI Spec for the application. Ensure the URL is http and not https.
 +
 image::quarkus-api-call.png[width=100%]
 
@@ -73,4 +73,3 @@ Key discovery.3scale.net/scheme, value http.
 
 . Click the *Save* button after you've added the three annotations.
 
-=== Manage the REST API with Red Hat OpenShift API Management

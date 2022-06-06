@@ -14,11 +14,11 @@ As a developer, with OpenShift API Management, you can manage API access, policy
 
 In this guided workshop you will 
 
-* Setup Developer Sandbos for Hat OpenShift API Management.
+* Setup Developer Sandbox for Red Hat OpenShift API Management.
 * Deploy a containerized application that exposes an HTTP API.
 * Annotate the application for easy discovery on Red Hat OpenShift API Management.
 * Secure and manage your HTTP API using Red Hat OpenShift API Management.
 
 
-This workshop uses the the newly lauched *Developer Sandbox for Red Hat OpenShift API Management* , which provides you with a private OpenShift environment in a shared, multi-tenant OpenShift cluster in which you can setup a OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. This also means you won't have to install anything on your workstation in order to run this workshop.
+This workshop uses the  newly lauched *Developer Sandbox for Red Hat OpenShift API Management*, which provides you with a private OpenShift environment in a shared, multi-tenant OpenShift cluster in which you can setup a OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. This also means you won't have to install anything on your workstation in order to run this workshop.
 

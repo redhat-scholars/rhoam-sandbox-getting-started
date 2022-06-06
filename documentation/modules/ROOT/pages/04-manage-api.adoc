@@ -9,7 +9,7 @@ In this section you will  configure and secure the API that you have already dep
 ====
 An API in OpenShift API Management is referred to as a *Product*. Each *Product* can have one or many Backends.
 
-A *Backend* is a web service that OpenShift API Management will proxy requests to based on mapping rules defined in the Product.
+A *Backend* is a web service that OpenShift API Management will proxy requests to, based on mapping rules defined in the Product.
 ====
 
 Because you already configured the Quarkus API for Service Discovery in an earlier section, you can import it automatically as follows:
@@ -143,7 +143,7 @@ image::staging-url.png[]
 image::json-response.png[] 
 
 === Delete the Unprotected Route
-* You visited a URL exposed directly by a Route in your OpenShift project in the first section of this guide.This endpoint was useful for testing, but is unprotected. You can now remove this public Route.
+* You visited a URL exposed directly by a Route in your OpenShift project in the first section of this guide. This endpoint was useful for testing, but is unprotected. You can now remove this public Route.
 * In the OpenShift console, click the *rhoam-quarkus-openapi* deployment in the Topology View.
 * Select the Resources tab in the panel that appeared.
 +
