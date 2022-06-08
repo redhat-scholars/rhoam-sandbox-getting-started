@@ -9,7 +9,7 @@ You will use the the newly lauched *Developer Sandbox for Red Hat OpenShift API 
 [#sandboxsignup]
 == Signup for Red Hat OpenShift API Management sandbox
 
-Register for a Developer Sandbox Red Hat OpenShift API Management for  by clicking on the red button in the https://developers.redhat.com/developer-sandbox/activities/share-java--applications-openshift-api-management[Red Hat OpenShift API Management user activities page]
+Register for a Developer Sandbox Red Hat OpenShift API Management for  by clicking on the red button in the https://red.ht/rhoam-sandbox[Red Hat OpenShift API Management user activities page]
 
 image::rhoam-sandbox-landing.png[width=100%]
 
