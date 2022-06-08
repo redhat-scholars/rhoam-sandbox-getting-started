@@ -58,10 +58,10 @@ spec:
 image::admin-network-policies-new-yaml.png[width=100%]
 . Click on the *Create* button at the bottom of the page.
 
-Now we are ready to go ahead and provision the *API Management Tenant*
 
 [#apitenant]
-== Create a API Management Tenant
+== Create an API Management Tenant
+Now we are ready to go ahead and provision the *API Management Tenant*. Switch over to the *Developer Perspective* to continue with the next steps.
 
 
 * From the *Projects* dropdown on the top of the page, set the project namespace as *<username>-dev* from the projects that have been already created for you.
