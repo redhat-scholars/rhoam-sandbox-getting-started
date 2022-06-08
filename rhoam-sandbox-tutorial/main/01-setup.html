@@ -91,6 +91,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="04-manage-api.html#_call_the_api_using_your_api_key">Call the API using API Key</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-manage-api.html#_quick_view_of_traffic">Quick view of Traffic Analytics</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -122,7 +125,7 @@
 <p>As a developer, with OpenShift API Management, you can manage API access, policy, and traffic controls, and reuse existing assets by connecting to an API. You can enhance the security of the APIs and developer portal by leveraging Red Hat’s single sign-on technology.</p>
 </div>
 <div class="paragraph">
-<p>You will use the the newly lauched <strong>Developer Sandbox for Red Hat OpenShift API Management</strong>, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management.</p>
+<p>You will use the  newly launched <strong>Developer Sandbox for Red Hat OpenShift API Management</strong>, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management.</p>
 </div>
 </div>
 </div>
@@ -150,15 +153,15 @@ Do not worry! This step will not save your phone number, we are just protecting 
 </div>
 </div>
 <div class="sect1">
-<h2 id="3scale-policy"><a class="anchor" href="#3scale-policy"></a>Create a Network Policy on OpenShift Dedicated to allow access from API Management</h2>
+<h2 id="3scale-policy"><a class="anchor" href="#3scale-policy"></a>Create a Network Policy in the sandbox to allow access from API Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>At the moment, OpenShift Dedicated needs a Network Policy to be manually created to allow access from Red Hat OpenShift API Management. This will  soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn&#8217;t already exist.</p>
+<p>The Developer Sandbox for Red Hat OpenShift API Management  enviroments needs a <strong>Network Policy</strong> to be  created to allow access from Red Hat OpenShift API Management. This will  soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn&#8217;t already exist.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click on the <strong>Administrator</strong> perspective, navigate to <strong>Network Policies</strong>, and click on <strong>Create NetworkPolicy</strong> button</p>
+<p>Click on the <strong>Administrator</strong> perspective, navigate to the section <strong>Networking</strong> &gt; <strong>Network Policies</strong>, and click on the <strong>Create NetworkPolicy</strong> button.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/admin-network-policies.png" alt="admin network policies" width="100%">
