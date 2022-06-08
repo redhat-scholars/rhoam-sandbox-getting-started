@@ -25,7 +25,7 @@ Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
 
 [#3scale-policy]
 == Create a Network Policy on OpenShift Dedicated to allow access from API Management 
-At the moment, OpenShift Dedicated needs a Network Policy to be manually created to allow access from Red Hat OpenShift API Management. This is would soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn't already exist.
+At the moment, OpenShift Dedicated needs a Network Policy to be manually created to allow access from Red Hat OpenShift API Management. This will  soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn't already exist.
 
 . Click on the *Administrator* perspective, navigate to *Network Policies*, and click on *Create NetworkPolicy* button
 +
