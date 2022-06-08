@@ -14,4 +14,4 @@ image::devsandbox-login.png[width=100%]
 
 * If welcome message maybe displayed if this is your first-time logging into OpenShift API Management. Dismiss, or read through the welcome message page(s).
 
-You are now on the Red Hat OpenShift API Management *dashboard*.
+You are now on the *Red Hat OpenShift API Management dashboard*.

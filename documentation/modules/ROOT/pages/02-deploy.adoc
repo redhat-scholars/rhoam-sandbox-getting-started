@@ -17,7 +17,14 @@ Now, let’s deploy an existing Quarkus application. The container image of this
 +
 image::project-add.png[width=75%]
 . On the +Add page, click the Container Image tile.
-. In the Image name from external registry field, enter: `quay.io/evanshortiss/rhoam-quarkus-openapi:latest`
+. In the Image name from external registry field, enter: 
++
+[.console-input]
+[source,bash]
+----
+quay.io/evanshortiss/rhoam-quarkus-openapi:latest
+----
+
 . Change the Runtime icon to *Quarkus*.
 . Check the Create a Route to the Application box under Advanced options.
 . At the end of the form, click Create. 
@@ -57,19 +64,30 @@ Service Discovery is a 3scale feature that helps you import services from an Ope
 . Click *rhoam-quarkus-openapi* link under the Services heading to load the Service details screen.
 +
 image::edit-label.png[width=100%]
-. Use the *Edit* link beside the Labels heading to add a label with the key and value `*discovery.3scale.net=true*`.
+. Use the *Edit* link beside the Labels heading to add a label with the key and value 
++
+[.console-input]
+[source,bash]
+----
+discovery.3scale.net=true
+----
+
 +
 image::discovery-label.png[width=100%]
 . Scroll down and click the *Annotations* to open the Edit annotations dialog for the Service.
 . Use the *Add more* button to add the following key-value pairs:
 +
 image::annotations-dialog.png[]
+
 +
-```
-Key discovery.3scale.net/description-path, value /q/openapi?format=json.
-Key discovery.3scale.net/port, value 8080.
-Key discovery.3scale.net/scheme, value http.
-```
+[options="header"]
+|==================================================================
+| KEY                                    | VALUE                   
+| discovery.3scale.net/description-path  | /q/openapi?format=json  
+| discovery.3scale.net/port              | 8080                    
+| discovery.3scale.net/scheme            | http                    
+|==================================================================
+
 
 . Click the *Save* button after you've added the three annotations.
 

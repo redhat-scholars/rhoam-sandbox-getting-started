@@ -5,7 +5,7 @@
 
 * xref:02-deploy.adoc[2. Deploy a REST API and setup for discovery]
 ** xref:02-deploy.adoc#deploy[Deploy a REST Service]
-** xref:02-deploy.adoc#configure[Configure Service]
+** xref:02-deploy.adoc#configure[Annotate the Quarkus Service]
 
 
 * xref:03_lauch-sandbox.adoc[3. Launch the API Management Dashboard]

@@ -9,7 +9,9 @@ You will use the the newly lauched *Developer Sandbox for Red Hat OpenShift API 
 [#sandboxsignup]
 == Signup for Red Hat OpenShift API Management sandbox
 
-Register for a Developer Sandbox Red Hat OpenShift API Management for  by clicking on the red button in the https://red.ht/rhoam-sandbox[Red Hat OpenShift API Management user activities page]
+Register for a Developer Sandbox Red Hat OpenShift API Management for  by clicking on the red button in the https://red.ht/rhoam-sandbox[Red Hat OpenShift API Management user activities page,role=external,window=_blank]
+
+
 
 image::rhoam-sandbox-landing.png[width=100%]
 
@@ -18,10 +20,49 @@ Do not worry! This step will not save your phone number, we are just protecting 
 
 You will also be asked to confirm the request through an email sent to your inbox. After this, you will be able to login to the sandbox.
 
+Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
+
+
+[#3scale-policy]
+== Create a Network Policy on OpenShift Dedicated to allow access from API Management 
+At the moment, OpenShift Dedicated needs a Network Policy to be manually created to allow access from Red Hat OpenShift API Management. This is would soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn't already exist.
+
+. Click on the *Administrator* perspective, navigate to *Network Policies*, and click on *Create NetworkPolicy* button
++
+image::admin-network-policies.png[width=100%]
+. Click on *Edit YAML* link
++
+image::admin-network-policies-yaml.png[width=100%]
+. This is how the page will look like with the sample YAML
++
+image::admin-network-policies-old-yaml.png[width=100%]
+. In the YAML view,  replace the entire *spec* section with the content below. The *spec* section is shown  as highlighted in the above screenshot.
++
+[.console-input]
+[source,bash]
+----
+spec:
+  podSelector: {}
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: sandbox-rhoam-3scale
+  policyTypes:
+    - Ingress
+
+----
+
+. This YAML should look like this now
++
+image::admin-network-policies-new-yaml.png[width=100%]
+. Click on the *Create* button at the bottom of the page.
+
+Now we are ready to go ahead and provision the *API Management Tenant*
+
 [#apitenant]
 == Create a API Management Tenant
 
-Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
 
 * From the *Projects* dropdown on the top of the page, set the project namespace as *<username>-dev* from the projects that have been already created for you.
 
