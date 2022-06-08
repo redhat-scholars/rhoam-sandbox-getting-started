@@ -71,7 +71,7 @@
     <a class="nav-link" href="#deploy">Deploy a REST Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#configure">Configure Service</a>
+    <a class="nav-link" href="#configure">Annotate the Quarkus Service</a>
   </li>
 </ul>
   </li>
@@ -153,7 +153,12 @@
 <p>On the +Add page, click the Container Image tile.</p>
 </li>
 <li>
-<p>In the Image name from external registry field, enter: <code>quay.io/evanshortiss/rhoam-quarkus-openapi:latest</code></p>
+<p>In the Image name from external registry field, enter:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quay.io/evanshortiss/rhoam-quarkus-openapi:latest</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Change the Runtime icon to <strong>Quarkus</strong>.</p>
@@ -255,7 +260,12 @@
 </div>
 </li>
 <li>
-<p>Use the <strong>Edit</strong> link beside the Labels heading to add a label with the key and value <code><strong>discovery.3scale.net=true</strong></code>.</p>
+<p>Use the <strong>Edit</strong> link beside the Labels heading to add a label with the key and value</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">discovery.3scale.net=true</code></pre>
+</div>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/discovery-label.png" alt="discovery label" width="100%">
@@ -272,13 +282,32 @@
 <img src="_images/annotations-dialog.png" alt="annotations dialog">
 </div>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Key discovery.3scale.net/description-path, value /q/openapi?format=json.
-Key discovery.3scale.net/port, value 8080.
-Key discovery.3scale.net/scheme, value http.</code></pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">KEY</th>
+<th class="tableblock halign-left valign-top">VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discovery.3scale.net/description-path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/q/openapi?format=json</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discovery.3scale.net/port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8080</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discovery.3scale.net/scheme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">http</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>Click the <strong>Save</strong> button after you&#8217;ve added the three annotations.</p>
