@@ -14,3 +14,4 @@
 ** xref:04-manage-api.adoc#_import_the_api_into_openshift_api_management[Import the API into OpenShift API Management]
 ** xref:04-manage-api.adoc#_enable_api_key_security[Enable API Key Security]
 ** xref:04-manage-api.adoc#_call_the_api_using_your_api_key[Call the API using API Key]
+** xref:04-manage-api.adoc#_quick_view_of_traffic[Quick view of Traffic Analytics]

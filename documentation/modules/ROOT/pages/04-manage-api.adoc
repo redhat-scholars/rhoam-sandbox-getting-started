@@ -141,6 +141,7 @@ image::staging-url.png[]
 ** e.g https://user-dev-rhoam-quarkus-openapi-3scale-api.cluster.com/fruits?user_key=_API_KEY_GOES_HERE_
 +
 image::json-response.png[] 
+* Access this page a few times just by refreshing the browser to simulate multiple hits.
 
 === Delete the Unprotected Route
 * You visited a URL exposed directly by a Route in your OpenShift project in the first section of this guide. This endpoint was useful for testing, but is unprotected. You can now remove this public Route.
@@ -155,3 +156,17 @@ image:delete-route.png[]
 
 
 Congratulations! The only endpoint available to access your API now enforces API Key security.
+
+
+== Quick view of Traffic Analytics
+
+* In the sandbox, navigate to the Product *rhoam-quarkus-openapi* from the OpenShift API Management Dashboard.
+* Click on the left hand menu *Analytics > Traffic*
+* You will be able to see the number of hits  received by the REST API. 
++
+image::traffic-hit.png[]
+* You can click on the other menu under the Analytics section to see other stats as well
+
+
+Congratulations! You have succesffuly completed this workshop!
+You can read more about the service on the https://developers.redhat.com/products/red-hat-openshift-api-management/overview[Red Hat OpenShift API Management product page,role=external,window=_blank].

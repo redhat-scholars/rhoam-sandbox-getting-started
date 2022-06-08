@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 
 As a developer, with OpenShift API Management, you can manage API access, policy, and traffic controls, and reuse existing assets by connecting to an API. You can enhance the security of the APIs and developer portal by leveraging Red Hat’s single sign-on technology.
 
-You will use the the newly lauched *Developer Sandbox for Red Hat OpenShift API Management*, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. 
+You will use the  newly launched *Developer Sandbox for Red Hat OpenShift API Management*, which provides you with a private OpenShift API Management tenant. You will also be able to deploy your services to learn how to manage them with OpenShift API Management. 
 
 [#sandboxsignup]
 == Signup for Red Hat OpenShift API Management sandbox
@@ -24,10 +24,11 @@ Once you launch the sandbox, follow these steps to setup an RHOAM sandbox tenant
 
 
 [#3scale-policy]
-== Create a Network Policy on OpenShift Dedicated to allow access from API Management 
-At the moment, OpenShift Dedicated needs a Network Policy to be manually created to allow access from Red Hat OpenShift API Management. This will  soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn't already exist.
+== Create a Network Policy in the sandbox to allow access from API Management 
+The Developer Sandbox for Red Hat OpenShift API Management  enviroments needs a *Network Policy* to be  created to allow access from Red Hat OpenShift API Management. This will  soon be automated. But for the purpose of this workshop, you will need to add this manually if this doesn't already exist.
 
-. Click on the *Administrator* perspective, navigate to *Network Policies*, and click on *Create NetworkPolicy* button
+
+. Click on the *Administrator* perspective, navigate to the section *Networking* > *Network Policies*, and click on the *Create NetworkPolicy* button.
 +
 image::admin-network-policies.png[width=100%]
 . Click on *Edit YAML* link

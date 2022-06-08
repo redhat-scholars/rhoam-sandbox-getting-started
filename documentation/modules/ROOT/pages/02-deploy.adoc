@@ -64,7 +64,7 @@ Service Discovery is a 3scale feature that helps you import services from an Ope
 . Click *rhoam-quarkus-openapi* link under the Services heading to load the Service details screen.
 +
 image::edit-label.png[width=100%]
-. Use the *Edit* link beside the Labels heading to add a label with the key and value 
+. Use the *Edit* link beside the Labels heading to add a label with the key and value, and click on *Save*
 +
 [.console-input]
 [source,bash]
